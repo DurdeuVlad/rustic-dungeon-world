@@ -1,0 +1,304 @@
+{
+    "carvers":  {
+                    "air":  "minecraft:nether_cave"
+                },
+    "downfall":  0.0,
+    "effects":  {
+                    "additions_sound":  {
+                                            "sound":  "minecraft:ambient.basalt_deltas.additions",
+                                            "tick_chance":  0.0111
+                                        },
+                    "ambient_sound":  "minecraft:ambient.basalt_deltas.loop",
+                    "fog_color":  12638463,
+                    "mood_sound":  {
+                                       "block_search_extent":  8,
+                                       "offset":  2.0,
+                                       "sound":  "minecraft:ambient.basalt_deltas.mood",
+                                       "tick_delay":  6000
+                                   },
+                    "music":  {
+                                  "max_delay":  24000,
+                                  "min_delay":  12000,
+                                  "replace_current_music":  false,
+                                  "sound":  "minecraft:music.nether.basalt_deltas"
+                              },
+                    "particle":  {
+                                     "options":  {
+                                                     "type":  "minecraft:white_ash"
+                                                 },
+                                     "probability":  0.118093334
+                                 },
+                    "sky_color":  7907327,
+                    "water_color":  6388580,
+                    "water_fog_color":  2302743
+                },
+    "features":  [
+                     [
+
+                     ],
+                     [
+
+                     ],
+                     [
+
+                     ],
+                     [
+
+                     ],
+                     [
+                         "minecraft:delta",
+                         "minecraft:small_basalt_columns",
+                         "minecraft:large_basalt_columns"
+                     ],
+                     [
+
+                     ],
+                     [
+
+                     ],
+                     [
+                         "minecraft:basalt_blobs",
+                         "minecraft:blackstone_blobs",
+                         "minecraft:spring_delta",
+                         "minecraft:patch_fire",
+                         "minecraft:patch_soul_fire",
+                         "minecraft:glowstone_extra",
+                         "minecraft:glowstone",
+                         "minecraft:brown_mushroom_nether",
+                         "minecraft:red_mushroom_nether",
+                         "minecraft:ore_magma",
+                         "minecraft:spring_closed_double",
+                         "minecraft:ore_gold_deltas",
+                         "minecraft:ore_quartz_deltas",
+                         "minecraft:ore_ancient_debris_large",
+                         "minecraft:ore_debris_small"
+                     ]
+                 ],
+    "has_precipitation":  false,
+    "spawn_costs":  {
+
+                    },
+    "spawners":  {
+                     "ambient":  [
+
+                                 ],
+                     "axolotls":  [
+
+                                  ],
+                     "creature":  [
+                                      {
+                                          "type":  "minecraft:strider",
+                                          "maxCount":  2,
+                                          "minCount":  1,
+                                          "weight":  60
+                                      }
+                                  ],
+                     "misc":  [
+
+                              ],
+                     "monster":  [
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:decrepit_skeleton"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:skeleton_demoman"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:decaying_zombie"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:baby_skeleton"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:barrel_zombie"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:phantom_creeper"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:door_knight"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:restless_spirit"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:skeleton_thrasher"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:seared_spirit"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:firelight"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:bonescaller"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:bone_imp"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:dark_vortex"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:dread_hound"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:fallen_chaos_knight"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:spirit_guide"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:zombie_clown"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:dire_hound_leader"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:corpse_fly"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:bloody_gadfly"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:zombie_fisherman"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:swarmer"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:zombie_bruiser"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:zombie_lumberjack"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:siamese_skeletons"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:baby_spider"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:pumpkin_dunce"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:mrs_pumpkin"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  8,
+                                         "minCount":  1,
+                                         "type":  "born_in_chaos_v1:pumpkin_bruiser"
+                                     },
+                                     {
+                                         "maxCount":  1,
+                                         "weight":  4,
+                                         "minCount":  1,
+                                         "type":  "minecraft:creeper"
+                                     },
+                                     {
+                                         "maxCount":  2,
+                                         "weight":  4,
+                                         "minCount":  1,
+                                         "type":  "minecraft:spider"
+                                     }
+                                 ],
+                     "underground_water_creature":  [
+
+                                                    ],
+                     "water_ambient":  [
+
+                                       ],
+                     "water_creature":  [
+
+                                        ]
+                 },
+    "temperature":  2.0
+}

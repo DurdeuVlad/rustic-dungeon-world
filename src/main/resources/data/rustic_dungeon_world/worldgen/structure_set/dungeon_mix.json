@@ -1,0 +1,294 @@
+{
+    "placement":  {
+                      "salt":  9182701,
+                      "spacing":  24,
+                      "type":  "minecraft:random_spread",
+                      "separation":  10
+                  },
+    "structures":  [
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_abandoned_temple",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_aviary",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_bandit_towers",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_bandit_village",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_bathhouse",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_ceryneian_hind",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_coliseum",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_fishing_hut",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_foundry",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_giant_mushroom",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_greenwood_pub",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_heavenly_challenger",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_heavenly_conqueror",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_heavenly_rider",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_illager_campsite",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_illager_corsair",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_illager_fort",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_illager_galley",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_illager_windmill",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_infested_temple",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_jungle_tree_house",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_keep_kayra",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_kisegi_sanctuary",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_lighthouse",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mechanical_nest",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_merchant_campsite",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mining_complex",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mining_system",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_monastery",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mushroom_house",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mushroom_mines",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_mushroom_village",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_plague_asylum",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_scorched_mines",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_shiraz_palace",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_small_blimp",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_thornborn_towers",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_typhon",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_undead_pirate_ship",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:dungeons_arise_wishing_well",
+                           "weight":  220
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_clown_caravan_plains",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_clown_caravan_savanna",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_clown_caravan_taiga",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_dark_tower_forest",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_dark_tower_plain",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_dark_tower_taiga",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_farm",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_firewell",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_gravecarrionexe",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_2003wise",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_2_dling",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_darktitan",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_derivas",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_d_4rk_devil_x",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_euthymia",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_feral",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_fubuki_banzai",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_memesus",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_mike_and_rory",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_nino_4416",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_orion",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_petasi",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_plug",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_rotborne",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_somfunambulist",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_tem_187",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_grave_the_gentleman_frog",
+                           "weight":  40
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_infernal_pumpkin",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_mound_of_hounds",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_observation_tower_forest",
+                           "weight":  120
+                       },
+                       {
+                           "structure":  "rustic_dungeon_world:born_in_chaos_v1_observation_tower_plains",
+                           "weight":  120
+                       }
+                   ]
+}

@@ -1,0 +1,10 @@
+{
+    "generator":  {
+                      "biome_source":  {
+                                           "type":  "rustic_dungeon_world:natural"
+                                       },
+                      "type":  "minecraft:noise",
+                      "settings":  "rustic_dungeon_world:dungeon"
+                  },
+    "type":  "rustic_dungeon_world:dungeon"
+}

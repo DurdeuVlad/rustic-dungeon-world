@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "all":  "minecraft:block/lime_glazed_terracotta"
+                 },
+    "parent":  "minecraft:block/cube_all"
+}

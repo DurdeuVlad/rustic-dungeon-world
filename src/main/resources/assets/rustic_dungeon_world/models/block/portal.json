@@ -1,0 +1,42 @@
+{
+    "render_type":  "minecraft:translucent",
+    "ambientocclusion":  false,
+    "elements":  [
+                     {
+                         "faces":  {
+                                       "south":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                16,
+                                                                16
+                                                            ],
+                                                     "texture":  "#portal"
+                                                 },
+                                       "north":  {
+                                                     "uv":  [
+                                                                0,
+                                                                0,
+                                                                16,
+                                                                16
+                                                            ],
+                                                     "texture":  "#portal"
+                                                 }
+                                   },
+                         "from":  [
+                                      0,
+                                      0,
+                                      7
+                                  ],
+                         "to":  [
+                                    16,
+                                    16,
+                                    9
+                                ]
+                     }
+                 ],
+    "textures":  {
+                     "particle":  "minecraft:block/crying_obsidian",
+                     "portal":  "minecraft:block/nether_portal"
+                 }
+}

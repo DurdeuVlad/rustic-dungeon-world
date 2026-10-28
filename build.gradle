@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.gradle.userdev' version '7.0.185'
+}
+
+group = 'dev.rustic'
+version = mod_version
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'   : mod_name,
+            'Specification-Vendor'  : mod_authors,
+            'Implementation-Title'  : mod_name,
+            'Implementation-Version': mod_version
+        ])
+    }
+}

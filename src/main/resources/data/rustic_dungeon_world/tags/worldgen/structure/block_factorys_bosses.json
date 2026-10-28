@@ -1,0 +1,10 @@
+{
+    "replace":  false,
+    "values":  [
+                   "rustic_dungeon_world:block_factorys_bosses_sandworm_nest",
+                   "rustic_dungeon_world:block_factorys_bosses_dragon_tower",
+                   "rustic_dungeon_world:block_factorys_bosses_underworld_arena",
+                   "rustic_dungeon_world:block_factorys_bosses_yeti_hideout",
+                   "rustic_dungeon_world:block_factorys_bosses_kraken_ship"
+               ]
+}

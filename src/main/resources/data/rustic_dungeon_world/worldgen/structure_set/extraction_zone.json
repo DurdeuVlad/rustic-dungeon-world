@@ -1,0 +1,14 @@
+{
+    "placement":  {
+                      "salt":  9182704,
+                      "spacing":  64,
+                      "type":  "minecraft:random_spread",
+                      "separation":  32
+                  },
+    "structures":  [
+                       {
+                           "structure":  "rustic_dungeon_world:extraction_zone",
+                           "weight":  1
+                       }
+                   ]
+}

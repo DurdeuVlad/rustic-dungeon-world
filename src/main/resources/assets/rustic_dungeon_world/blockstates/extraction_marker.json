@@ -1,0 +1,7 @@
+{
+    "variants":  {
+                     "":  {
+                              "model":  "rustic_dungeon_world:block/extraction_marker"
+                          }
+                 }
+}

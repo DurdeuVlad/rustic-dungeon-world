@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.rustic.dungeonworld.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["MobSunlightMixin", "BornSunlightMixin", "BornSpiritSunlightMixin", "StructureGenerationMixin", "FeatureGenerationMixin", "DungeonSurfaceSpawnMixin", "DungeonSkyTimeMixin", "DungeonSkyWriteMixin", "DungeonClimbingItemMixin", "DungeonClimbingHooksMixin", "DungeonTemplateAirMixin"],
+  "injectors": { "defaultRequire": 1 },
+  "client": ["DungeonSkyColorMixin"]
+}
