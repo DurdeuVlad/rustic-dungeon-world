@@ -98,6 +98,32 @@ public final class WeeklyReset {
                 return false;
             }
         }
+        // Mark the reset as due so beforeStart archives the dimension on next boot;
+        // without this the server restarts but the dungeon world survives untouched.
+        try {
+            Path root = server.getWorldPath(LevelResource.ROOT).toAbsolutePath().normalize();
+            Path stateFile = root.resolve("data/rustic-dungeon-reset.properties");
+            Properties state = new Properties();
+            if (Files.exists(stateFile)) {
+                try (InputStream in = Files.newInputStream(stateFile)) {
+                    state.load(in);
+                }
+            }
+            state.setProperty("completedAt", "0");
+            if (!state.containsKey("generation")) {
+                state.setProperty("generation", Long.toString(generation));
+            }
+            Files.createDirectories(stateFile.getParent());
+            Path temp = stateFile.resolveSibling(stateFile.getFileName() + ".tmp");
+            try (OutputStream out = Files.newOutputStream(temp)) {
+                state.store(out, "Dungeon reset schedule, real UTC epoch milliseconds");
+            }
+            Files.move(temp, stateFile, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            pending = false;
+            LOG.error("Manual reset failed: cannot mark reset in state file", e);
+            return false;
+        }
         try {
             Files.writeString(server.getServerDirectory().resolve(".dungeon-world-restart-request"), "manual-dungeon-reset\n");
         } catch (IOException e) {

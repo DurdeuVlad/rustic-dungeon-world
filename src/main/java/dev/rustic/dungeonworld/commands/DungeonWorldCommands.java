@@ -1,15 +1,28 @@
 package dev.rustic.dungeonworld.commands;
 
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.datafixers.util.Pair;
 import dev.rustic.dungeonworld.DungeonWorld;
 import dev.rustic.dungeonworld.WeeklyReset;
+import net.minecraft.Util;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 public final class DungeonWorldCommands {
@@ -94,6 +107,10 @@ public final class DungeonWorldCommands {
                     DungeonWorld.message(p, "Dungeon landing platform rebuilt at " + pos.toShortString() + ".");
                     return 1;
                 }))
+            .then(Commands.literal("nearest").requires(s -> s.hasPermission(2))
+                .executes(c -> nearestExtractionZone(c.getSource().getPlayerOrException(), 32))
+                .then(Commands.argument("radius", IntegerArgumentType.integer(1, 100))
+                    .executes(c -> nearestExtractionZone(c.getSource().getPlayerOrException(), IntegerArgumentType.getInteger(c, "radius")))))
             .then(Commands.literal("reset").requires(s -> s.hasPermission(2))
                 .executes(c -> {
                     ServerPlayer p = c.getSource().getPlayerOrException();
@@ -112,6 +129,54 @@ public final class DungeonWorldCommands {
                         return 1;
                     })))
         );
+    }
+
+    // Bounded async locate: vanilla /locate runs an unbounded synchronous scan on the
+    // server thread and stalls a fresh dimension. This resolves holders on-thread, runs
+    // findNearestMapStructure on the worldgen pool with a capped radius, and replies on
+    // the server thread. Structure-check chunk gen happens on worldgen workers, not the tick.
+    private static int nearestExtractionZone(ServerPlayer p, int radiusChunks) {
+        ServerLevel dim = p.server.getLevel(DungeonWorld.DIMENSION);
+        if (dim == null) {
+            DungeonWorld.message(p, "Dungeon dimension unavailable.");
+            return 0;
+        }
+        Registry<Structure> registry = dim.registryAccess().registryOrThrow(Registries.STRUCTURE);
+        Holder<Structure> holder = registry.getHolder(ResourceKey.create(Registries.STRUCTURE,
+            ResourceLocation.fromNamespaceAndPath("rustic_dungeon_world", "extraction_zone"))).orElse(null);
+        if (holder == null) {
+            DungeonWorld.message(p, "Extraction zone structure is not registered.");
+            return 0;
+        }
+        BlockPos origin = p.blockPosition();
+        int centerX = origin.getX() >> 4;
+        int centerZ = origin.getZ() >> 4;
+        DungeonWorld.message(p, "Searching for extraction zone within " + (radiusChunks * 16) + " blocks (async)...");
+        Util.backgroundExecutor().execute(() -> {
+            Pair<BlockPos, Holder<Structure>> result;
+            try {
+                result = dim.getChunkSource().getGenerator()
+                    .findNearestMapStructure(dim, HolderSet.direct(holder), origin, radiusChunks, true);
+            } catch (Throwable t) {
+                result = null;
+            }
+            Pair<BlockPos, Holder<Structure>> found = result;
+            p.server.execute(() -> {
+                if (found == null) {
+                    DungeonWorld.message(p, "No extraction zone within " + (radiusChunks * 16) + " blocks of "
+                        + centerX + "," + centerZ + " (search capped; try a larger radius).");
+                    return;
+                }
+                BlockPos pos = found.getFirst();
+                int dist = (int)Math.sqrt(origin.distSqr(pos));
+                Component coords = Component.literal("[" + pos.getX() + " " + pos.getY() + " " + pos.getZ() + "]")
+                    .withStyle(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,
+                        "/execute in rustic_dungeon_world:dungeon run tp @s " + pos.getX() + " " + pos.getY() + " " + pos.getZ())));
+                p.sendSystemMessage(Component.literal("Nearest extraction zone ").append(coords)
+                    .append(Component.literal(" — " + dist + " blocks away.")));
+            });
+        });
+        return 1;
     }
 
     private static int resetCooldown(ServerPlayer target) {
