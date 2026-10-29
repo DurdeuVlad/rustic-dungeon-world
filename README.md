@@ -22,12 +22,14 @@ Rebuilt into a maintained source repository from the compiled `rustic-dungeon-wo
 | `/dungeonworld list` | op 2 | active expeditions + cooldowns |
 | `/dungeonworld repair` | op 2 | rebuild the missing landing platform (crash-safe) |
 | `/dungeonworld reset [now]` | op 2 | show reset schedule / trigger a manual reset |
+| `/dungeonworld nearest [radius]` | op 2 | bounded async extraction-zone search (default 32, max 100 chunks) |
 
 ## Notable fixes vs the original jar
 - `spawn()` no longer throws `IllegalStateException` when the landing lodestone is missing — entry is refused with an actionable message and `/dungeonworld repair` rebuilds the platform.
 - Missing portal apron or return spot → clear message / safe fallback instead of silent failure.
 - `DungeonSpawnLimits` and the rest of the god-class internals were decompiled-and-preserved; `DungeonWorldCommands` owns the command tree.
-- `WeeklyReset` keeps its path-escape guards and DST-aware scheduling; `/dungeonworld reset now` triggers it manually with the same player-return + restart-request flow.
+- `WeeklyReset` keeps its path-escape guards and DST-aware scheduling; `/dungeonworld reset now` triggers it manually with the same player-return + restart-request flow. `requestNow()` stamps `completedAt=0` before halt so the next startup actually archives the dimension (1.0.0 restart-only bug fixed).
+- `/dungeonworld nearest` replaces vanilla `/locate` for extraction zones: the search runs on the worldgen pool with a capped radius and replies on the server thread � vanilla locate's unbounded synchronous scan stalled a fresh dimension for minutes. Prefer it on live servers.
 
 ## Dependencies
 When Dungeons Arise, Bosses'Rise (`block_factorys_bosses`), Born in Chaos, In Control — all `side=both`/`required` in `neoforge.mods.toml`.
