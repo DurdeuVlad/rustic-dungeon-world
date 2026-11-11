@@ -1,0 +1,10 @@
+{
+    "replace":  false,
+    "values":  [
+                   "dungeonworld:block_factorys_bosses_sandworm_nest",
+                   "dungeonworld:block_factorys_bosses_dragon_tower",
+                   "dungeonworld:block_factorys_bosses_underworld_arena",
+                   "dungeonworld:block_factorys_bosses_yeti_hideout",
+                   "dungeonworld:block_factorys_bosses_kraken_ship"
+               ]
+}

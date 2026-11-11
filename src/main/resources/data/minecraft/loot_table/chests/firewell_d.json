@@ -312,7 +312,7 @@
                                          {
                                              "condition":  "minecraft:location_check",
                                              "predicate":  {
-                                                               "dimension":  "rustic_dungeon_world:dungeon"
+                                                               "dimension":  "dungeonworld:dungeon"
                                                            }
                                          },
                                          {
@@ -335,7 +335,7 @@
                                          {
                                              "condition":  "minecraft:location_check",
                                              "predicate":  {
-                                                               "dimension":  "rustic_dungeon_world:dungeon"
+                                                               "dimension":  "dungeonworld:dungeon"
                                                            }
                                          },
                                          {
@@ -358,7 +358,7 @@
                                          {
                                              "condition":  "minecraft:location_check",
                                              "predicate":  {
-                                                               "dimension":  "rustic_dungeon_world:dungeon"
+                                                               "dimension":  "dungeonworld:dungeon"
                                                            }
                                          },
                                          {
@@ -381,7 +381,7 @@
                                          {
                                              "condition":  "minecraft:location_check",
                                              "predicate":  {
-                                                               "dimension":  "rustic_dungeon_world:dungeon"
+                                                               "dimension":  "dungeonworld:dungeon"
                                                            }
                                          },
                                          {

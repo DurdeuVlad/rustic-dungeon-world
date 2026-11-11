@@ -1,0 +1,15 @@
+{
+    "elements":  [
+                     {
+                         "weight":  1,
+                         "element":  {
+                                         "projection":  "rigid",
+                                         "processors":  "minecraft:empty",
+                                         "location":  "dungeonworld:extraction_zone",
+                                         "element_type":  "minecraft:single_pool_element"
+                                     }
+                     }
+                 ],
+    "name":  "dungeonworld:extraction_zone",
+    "fallback":  "minecraft:empty"
+}

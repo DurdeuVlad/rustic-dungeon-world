@@ -1,0 +1,109 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Grant wrapper
+        run: chmod +x gradlew
+
+      - name: Verify tag matches project version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(grep -E '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '[:space:]')"
+          if [ "$tag" != "$version" ]; then
+            echo "::error::tag 'v$tag' does not match gradle.properties mod_version '$version'"
+            exit 1
+          fi
+
+      - name: Build
+        run: ./gradlew clean build --console=plain
+
+      # Expanded mod metadata must agree with the released version.
+      - name: Verify metadata version parity
+        run: |
+          ver=$(grep -E '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '[:space:]')
+          nf=$(grep -oE '^[[:space:]]*version="[^"]+"' build/resources/main/META-INF/neoforge.mods.toml | head -1 | grep -oE '"[^"]+"' | tr -d '"')
+          echo "gradle.properties=$ver neoforge.mods.toml=$nf"
+          if [ "$nf" != "$ver" ]; then
+            echo "::error::version skew between gradle.properties and neoforge.mods.toml"
+            exit 1
+          fi
+          if [ ! -f "build/libs/dungeonworld-$ver.jar" ]; then
+            echo "::error::missing expected artifact build/libs/dungeonworld-$ver.jar"
+            exit 1
+          fi
+
+      - name: Checksum
+        run: |
+          sha256sum build/libs/dungeonworld-*.jar > checksums.txt
+          cat checksums.txt
+
+      # `v1.1.0` ships "release"; `v1.1.0-beta.2` ships "beta".
+      - name: Resolve publish metadata
+        id: meta
+        run: |
+          v="$(grep -E '^mod_version=' gradle.properties | cut -d= -f2 | tr -d '[:space:]')"
+          case "$v" in
+            *alpha*) t=alpha ;;
+            *beta*)  t=beta ;;
+            *)       t=release ;;
+          esac
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "releasetype=$t" >> "$GITHUB_OUTPUT"
+          echo "resolved: version=$v releasetype=$t"
+
+      - name: Draft release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          body: |
+            **Dungeon World ${{ github.ref_name }}** — NeoForge 21.1+ (MC 1.21.1). `checksums.txt` covers the jar.
+          files: |
+            build/libs/dungeonworld-*.jar
+            checksums.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Skipped unless vars.CURSEFORGE_PROJECT_ID is configured.
+      - name: Publish to CurseForge
+        if: ${{ vars.CURSEFORGE_PROJECT_ID != '' }}
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          curseforge-id: ${{ vars.CURSEFORGE_PROJECT_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_API_TOKEN }}
+          files: build/libs/dungeonworld-*.jar
+          name: Dungeon World ${{ steps.meta.outputs.version }} for NeoForge (MC 1.21.1)
+          version: ${{ steps.meta.outputs.version }}
+          version-type: ${{ steps.meta.outputs.releasetype }}
+          changelog-file: CHANGELOG.md
+          loaders: neoforge
+          game-versions: |
+            1.21.1
+            Java 21
+          dependencies: |
+            when-dungeons-arise(optional)
+            born-in-chaos(optional)
+            in-control(optional)
+            bossesrise(optional)

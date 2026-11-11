@@ -3,7 +3,7 @@ plugins {
     id 'net.neoforged.gradle.userdev' version '7.0.185'
 }
 
-group = 'dev.rustic'
+group = 'com.dwurdy'
 version = mod_version
 
 java {
@@ -22,5 +22,13 @@ jar {
             'Implementation-Title'  : mod_name,
             'Implementation-Version': mod_version
         ])
+    }
+}
+
+processResources {
+    def props = [mod_version: mod_version]
+    inputs.properties props
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand props
     }
 }

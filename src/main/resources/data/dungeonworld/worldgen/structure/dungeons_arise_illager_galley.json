@@ -1,0 +1,29 @@
+{
+    "type":  "minecraft:jigsaw",
+    "start_pool":  "dungeons_arise:aquatic/illager_galley/illager_galley_main",
+    "size":  7,
+    "biomes":  [
+                   "dungeonworld:cold_ocean",
+                   "dungeonworld:deep_cold_ocean",
+                   "dungeonworld:deep_frozen_ocean",
+                   "dungeonworld:deep_lukewarm_ocean",
+                   "dungeonworld:deep_ocean",
+                   "dungeonworld:frozen_ocean",
+                   "dungeonworld:lukewarm_ocean",
+                   "dungeonworld:ocean",
+                   "dungeonworld:warm_ocean"
+               ],
+    "adapt_noise":  false,
+    "spawn_overrides":  {
+
+                        },
+    "max_distance_from_center":  114,
+    "step":  "surface_structures",
+    "start_height":  {
+                         "absolute":  0
+                     },
+    "project_start_to_heightmap":  "WORLD_SURFACE_WG",
+    "use_expansion_hack":  false,
+    "liquid_settings":  "apply_waterlogging",
+    "terrain_adaptation":  "beard_box"
+}

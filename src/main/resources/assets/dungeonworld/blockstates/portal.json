@@ -1,0 +1,7 @@
+{
+    "variants":  {
+                     "":  {
+                              "model":  "dungeonworld:block/portal"
+                          }
+                 }
+}

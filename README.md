@@ -1,15 +1,15 @@
-# Rustic Dungeon World
+# Dungeon World
 
-Timed adventure expeditions through a shared dungeon dimension for **Rustic Craft 2** (Minecraft 1.21.1, NeoForge 21.1.248).
+Timed adventure expeditions through a shared dungeon dimension (Minecraft 1.21.1, NeoForge 21.1.248).
 
-Rebuilt into a maintained source repository from the compiled `rustic-dungeon-world-1.0.0.jar` (provenance: decompiled with CFR 0.152 and refactored; behavior preserved).
+Formerly "Rustic Dungeon World" (renamed in 1.1.0). Rebuilt into a maintained source repository from the compiled `rustic-dungeon-world-1.0.0.jar` (provenance: decompiled with CFR 0.152 and refactored; behavior preserved).
 
 ## Features
 - One-hour expeditions through operator-built portals; four-hour cooldown on completion, expiry, leave, or death.
 - Shared dungeon dimension with overworld-like terrain (dedicated biomes), WDA/Bosses'Rise/Born in Chaos structures, extraction zones, relic loot.
 - Adventure-mode enforcement for non-operators; block/explosion protection inside the dimension.
 - Weekly world reset (Europe/Bucharest, Monday 05:00 default) with wall-clock persistence across restarts.
-- Countdown HUD via custom payload (`rustic_dungeon_world:timer`).
+- Countdown HUD via custom payload (`dungeonworld:timer`).
 
 ## Commands
 | Command | Who | What |
@@ -35,7 +35,7 @@ Rebuilt into a maintained source repository from the compiled `rustic-dungeon-wo
 When Dungeons Arise, Bosses'Rise (`block_factorys_bosses`), Born in Chaos, In Control — all `side=both`/`required` in `neoforge.mods.toml`.
 
 ## Build
-`./gradlew build` → `build/libs/rustic-dungeon-world-<version>.jar` (JDK 21).
+`./gradlew build` → `build/libs/dungeonworld-<version>.jar` (JDK 21).
 
 ## Server deployment
-See `DEPLOYMENT.md` in the original update package: merge `config/rustic_dungeon_world-*.toml`, the `config/incontrol/` spawn rules, and `corpse.access.only_owner=false`; run a restart supervisor (`server-restart-loop.ps1`) before enabling the weekly reset.
+See `DEPLOYMENT.md` in the original update package: merge `config/dungeonworld-*.toml`, the `config/incontrol/` spawn rules, and `corpse.access.only_owner=false`; run a restart supervisor (`server-restart-loop.ps1`) before enabling the weekly reset.
