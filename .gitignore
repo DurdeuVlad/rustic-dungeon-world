@@ -2,3 +2,7 @@
 build/
 run/
 *.log
+runs/
+.idea/
+*.iml
+.vscode/

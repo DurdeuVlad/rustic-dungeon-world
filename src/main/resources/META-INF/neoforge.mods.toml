@@ -30,7 +30,7 @@ versionRange="[1.21.1,1.21.2)"
 side="BOTH"
 [[dependencies.dungeonworld]]
 modId="dungeons_arise"
-type="optional"
+type="required"
 versionRange="[0,)"
 side="BOTH"
 [[dependencies.dungeonworld]]

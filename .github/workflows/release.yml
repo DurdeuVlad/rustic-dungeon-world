@@ -103,7 +103,7 @@ jobs:
             1.21.1
             Java 21
           dependencies: |
-            when-dungeons-arise(optional)
+            when-dungeons-arise(required)
             born-in-chaos(optional)
             in-control(optional)
             bossesrise(optional)

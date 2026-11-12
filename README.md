@@ -32,10 +32,14 @@ Formerly "Rustic Dungeon World" (renamed in 1.1.0). Rebuilt into a maintained so
 - `/dungeonworld nearest` replaces vanilla `/locate` for extraction zones: the search runs on the worldgen pool with a capped radius and replies on the server thread � vanilla locate's unbounded synchronous scan stalled a fresh dimension for minutes. Prefer it on live servers.
 
 ## Dependencies
-When Dungeons Arise, Bosses'Rise (`block_factorys_bosses`), Born in Chaos, In Control — all `side=both`/`required` in `neoforge.mods.toml`.
+Required: When Dungeons Arise (`dungeons_arise`). Optional: Bosses'Rise (`block_factorys_bosses`), Born in Chaos, In Control.
 
 ## Build
 `./gradlew build` → `build/libs/dungeonworld-<version>.jar` (JDK 21).
 
 ## Server deployment
 See `DEPLOYMENT.md` in the original update package: merge `config/dungeonworld-*.toml`, the `config/incontrol/` spawn rules, and `corpse.access.only_owner=false`; run a restart supervisor (`server-restart-loop.ps1`) before enabling the weekly reset.
+
+## License
+
+[MIT](LICENSE). This repository contains the mod only; the Rustic Craft modpack and server config are not included.
