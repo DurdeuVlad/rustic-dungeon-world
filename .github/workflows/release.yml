@@ -99,9 +99,8 @@ jobs:
           version-type: ${{ steps.meta.outputs.releasetype }}
           changelog-file: CHANGELOG.md
           loaders: neoforge
-          game-versions: |
-            1.21.1
-            Java 21
+          game-versions: 1.21.1
+          java: 21
           dependencies: |
             when-dungeons-arise(required)
             born-in-chaos(optional)
